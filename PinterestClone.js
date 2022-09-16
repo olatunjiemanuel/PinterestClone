@@ -5,6 +5,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //screen imports
 import HomeScreen from "./src/screens/HomeScreen";
+import SearchScreen from "./src/screens/SearchScreen";
+import ConnectScreen from "./src/screens/ConnectScreen";
+import ProfileScreen from "./src/screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,39 +48,44 @@ export default function App() {
             ),
           }}
         />
-        {/* <Tab.Screen
-        name="searchScreen"
-        component={searchScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.TabIcons}>
-              <SearchSVG color={focused ? 'red' : 'black'} />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="likesScreen"
-        component={likesScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.TabIcons}>
-              <LikesSVG color={focused ? 'red' : 'black'} />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="cartScreen"
-        component={cartScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.TabIcons}>
-              <CartSVG color={focused ? 'red' : 'black'} />
-            </View>
-          ),
-        }}
-      /> */}
+        <Tab.Screen
+          name="SearchScreen"
+          component={SearchScreen}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={styles.TabIcons}>
+                <Text>SearchScreen</Text>
+                {/* <SearchSVG color={focused ? "red" : "black"} /> */}
+              </View>
+            ),
+          }}
+        />
+
+        <Tab.Screen
+          name="ConnectScreeen"
+          component={ConnectScreen}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={styles.TabIcons}>
+                <Text>ConnectScreen</Text>
+                {/* <LikesSVG color={focused ? 'red' : 'black'} /> */}
+              </View>
+            ),
+          }}
+        />
+
+        <Tab.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <View style={styles.TabIcons}>
+                <Text>ProfileScreen</Text>
+                {/* <CartSVG color={focused ? 'red' : 'black'} /> */}
+              </View>
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
