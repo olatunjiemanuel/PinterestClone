@@ -4,7 +4,7 @@ import React from "react";
 const SearchScreen = () => {
   return (
     <View style={{ paddingTop: 40 }}>
-      <Text>SearchScreen</Text>
+      <Text>ProfileScreen</Text>
     </View>
   );
 };

@@ -9,6 +9,11 @@ import SearchScreen from "./src/screens/SearchScreen";
 import ConnectScreen from "./src/screens/ConnectScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 
+//SVG imports
+import { Octicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -20,9 +25,8 @@ export default function App() {
           tabBarStyle: [
             {
               display: "flex",
-              backgroundColor: "red",
+              //   backgroundColor: "red",
               position: "absolute",
-              //   bottom: 20,
               //   height: 65,
               //   width: 352,
               //   marginHorizontal: 18,
@@ -42,8 +46,13 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.TabIcons}>
-                <Text>Home</Text>
+                {/* <Text>Home</Text> */}
                 {/* <HomeTabSvg color={focused ? "red" : "black"} /> */}
+                <Octicons
+                  name="home"
+                  size={24}
+                  color={focused ? "black" : "grey"}
+                />
               </View>
             ),
           }}
@@ -54,7 +63,12 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.TabIcons}>
-                <Text>SearchScreen</Text>
+                <Feather
+                  name="search"
+                  size={24}
+                  color={focused ? "black" : "grey"}
+                />
+                {/* <Text>SearchScreen</Text> */}
                 {/* <SearchSVG color={focused ? "red" : "black"} /> */}
               </View>
             ),
@@ -67,7 +81,12 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.TabIcons}>
-                <Text>ConnectScreen</Text>
+                <AntDesign
+                  name="message1"
+                  size={24}
+                  color={focused ? "black" : "grey"}
+                />
+                {/* <Text>ConnectScreen</Text> */}
                 {/* <LikesSVG color={focused ? 'red' : 'black'} /> */}
               </View>
             ),
@@ -80,7 +99,15 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.TabIcons}>
-                <Text>ProfileScreen</Text>
+                {/* user profile picture will be shown here*/}
+                <View
+                  style={{
+                    backgroundColor: focused ? "black" : "grey",
+                    width: 20,
+                    height: 20,
+                    borderRadius: 10,
+                  }}
+                ></View>
                 {/* <CartSVG color={focused ? 'red' : 'black'} /> */}
               </View>
             ),
