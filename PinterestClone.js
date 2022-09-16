@@ -17,20 +17,20 @@ export default function App() {
       <Tab.Navigator
         screenOptions={{
           tabBarShowLabel: false,
-          //   tabBarStyle: [
-          //     {
-          //       display: "flex",
-          //       backgroundColor: "#fff",
-          //       position: "absolute",
-          //       bottom: 20,
-          //       height: 65,
-          //       width: 352,
-          //       marginHorizontal: 18,
-          //       borderRadius: 69,
-          //       marginBottom: 40,
-          //     },
-          //     null,
-          //   ],
+          tabBarStyle: [
+            {
+              display: "flex",
+              backgroundColor: "red",
+              position: "absolute",
+              //   bottom: 20,
+              //   height: 65,
+              //   width: 352,
+              //   marginHorizontal: 18,
+              //   borderRadius: 69,
+              //   marginBottom: 40,
+            },
+            null,
+          ],
           tabBarActiveTintColor: "red",
           tabBarInActiveTintColor: "gray",
           header: () => null,
