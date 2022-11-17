@@ -12,6 +12,7 @@ import React, { useState } from "react";
 // component import
 import PreferenceComponent from "../../assets/Components/PreferenceComponent";
 import PreferenceData from "../../assets/API Calls/RandomImageAPI";
+import CloseButtonComponent from "../../assets/Components/CloseButtonComponent";
 
 const HomeScreen = () => {
   //const [preferenceModal, setPreferenceModal] = useState(true);
@@ -22,9 +23,14 @@ const HomeScreen = () => {
       <Modal visible={isShow} animationType={"fade"} transparent={true}>
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
+            <CloseButtonComponent
+              onPress={() => {
+                setShow(false);
+              }}
+            />
             <Text style={styles.text}>
-              {/* What are you interested in ? */}
-              {PreferenceData[0].id}
+              What are you interested in ?You can select up to 5 now changes as
+              you go {PreferenceData[0].id}
             </Text>
             <Image
               style={{ height: 200, width: 200 }}
