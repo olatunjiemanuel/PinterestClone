@@ -7,7 +7,7 @@ import CloseButtonSvg from "../../SVGs/CloseButtonSvg/index";
 const CloseButtonComponent = (props) => {
   const { onPress } = props;
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} style={styles.mainCntr}>
       <CloseButtonSvg />
     </TouchableOpacity>
   );
@@ -15,4 +15,10 @@ const CloseButtonComponent = (props) => {
 
 export default CloseButtonComponent;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  mainCntr: {
+    backgroundColor: "red",
+    marginLeft: 280,
+    marginRight: 10,
+  },
+});

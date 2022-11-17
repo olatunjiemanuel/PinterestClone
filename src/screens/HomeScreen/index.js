@@ -28,21 +28,18 @@ const HomeScreen = () => {
                 setShow(false);
               }}
             />
-            <Text style={styles.text}>
-              What are you interested in ?You can select up to 5 now changes as
-              you go {PreferenceData[0].id}
-            </Text>
-            <Image
+            <View style={styles.PreferenceHeaderCntr}>
+              <Text style={styles.PreferenceHeaderTxt}>
+                What are you interested in ? You can select up to 5 now and make
+                changes as you go
+                {/* {PreferenceData[0].id} */}
+              </Text>
+            </View>
+            {/* <Image
               style={{ height: 200, width: 200 }}
               source={{ uri: "https://picsum.photos/200/300" }}
-            />
-            <View
-              style={{
-                flexDirection: "row",
-                flexWrap: "wrap",
-                justifyContent: "space-around",
-              }}
-            >
+            /> */}
+            <View style={styles.PreferenceComponentCntr}>
               <PreferenceComponent />
               <PreferenceComponent />
               <PreferenceComponent />
@@ -104,5 +101,19 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     // alignItems: "center",
     borderRadius: 7,
+    padding: 20,
+  },
+  PreferenceHeaderCntr: {
+    paddingTop: 20,
+  },
+  PreferenceHeaderTxt: {
+    textAlign: "center",
+    fontWeight: "500",
+  },
+  PreferenceComponentCntr: {
+    paddingTop: 40,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
   },
 });
