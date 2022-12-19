@@ -17,8 +17,7 @@ export default CloseButtonComponent;
 
 const styles = StyleSheet.create({
   mainCntr: {
-    backgroundColor: "red",
-    marginLeft: 280,
-    marginRight: 10,
+    //backgroundColor: "red",
+    alignSelf: "flex-end",
   },
 });

@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 
-const PreferenceComponent = () => {
+const PreferenceComponent = (props) => {
+  const { componentText } = props;
   return (
-    <View style={styles.preferenceCntnr}>
-      <Text>Prefee1</Text>
-    </View>
+    <TouchableOpacity style={styles.preferenceCntnr}>
+      <Text>{componentText}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -16,5 +17,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 7.5,
     padding: 5,
+    margin: 5,
   },
 });

@@ -1,11 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+
+// component imports
+import SearchbarComponent from "../../assets/Components/SearchbarComponent";
 
 const SearchScreen = () => {
   return (
-    <View style={{ paddingTop: 40 }}>
-      <Text>Search Screen</Text>
-    </View>
+    <SafeAreaView style={{ marginHorizontal: 20 }}>
+      <SearchbarComponent placeholder="... Search" />
+    </SafeAreaView>
   );
 };
 

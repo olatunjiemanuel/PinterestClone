@@ -6,6 +6,8 @@ import {
   ScrollView,
   Modal,
   Image,
+  SafeAreaView,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 
@@ -13,14 +15,15 @@ import React, { useState } from "react";
 import PreferenceComponent from "../../assets/Components/PreferenceComponent";
 import PreferenceData from "../../assets/API Calls/RandomImageAPI";
 import CloseButtonComponent from "../../assets/Components/CloseButtonComponent";
+import ButtonComponent from "../../assets/Components/ButtonComponent";
 
 const HomeScreen = () => {
   //const [preferenceModal, setPreferenceModal] = useState(true);
   const [isShow, setShow] = useState(true);
-  console.log(PreferenceData[0].url);
+  //console.log(PreferenceData[0].url);
   return (
-    <View style={styles.homeContainer}>
-      <Modal visible={isShow} animationType={"fade"} transparent={true}>
+    <SafeAreaView style={styles.homeContainer}>
+      <Modal visible={isShow} animationType={"slide"} transparent={true}>
         <View style={styles.modalContainer}>
           <View style={styles.modal}>
             <CloseButtonComponent
@@ -40,17 +43,25 @@ const HomeScreen = () => {
               source={{ uri: "https://picsum.photos/200/300" }}
             /> */}
             <View style={styles.PreferenceComponentCntr}>
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
-              <PreferenceComponent />
+              <PreferenceComponent componentText="Art" />
+              <PreferenceComponent componentText="Sport" />
+              <PreferenceComponent componentText="Fashion" />
+              <PreferenceComponent componentText="Shoes" />
+              <PreferenceComponent componentText="Technology" />
+              <PreferenceComponent componentText="Programming" />
+              <PreferenceComponent componentText="Google" />
+              <PreferenceComponent componentText="Something" />
+              <PreferenceComponent componentText="Something" />
+              <PreferenceComponent componentText="Something" />
+              <PreferenceComponent componentText="Something" />
+              <PreferenceComponent componentText="Something" />
+            </View>
+            <View style={styles.buttonComponentCtnr}>
+              <ButtonComponent
+                buttonText="Confirm"
+                buttonStyle={styles.buttonComponent}
+                buttonTextStyle={styles.buttonTextStyle}
+              />
             </View>
             {/* <Button
               title="Click Here To Hide Modal"
@@ -61,17 +72,19 @@ const HomeScreen = () => {
       </Modal>
       <ScrollView
         horizontal={true}
-        style={{ backgroundColor: "red", height: 30 }}
+        style={{ backgroundColor: "red", padding: 20 }}
       >
-        <View>
-          <Text>For you</Text>
-        </View>
-        <View>
-          <Text>Preferences </Text>
-        </View>
+        <TouchableOpacity onPress={() => setShow(true)}>
+          <View>
+            <Text>For you</Text>
+          </View>
+          <View>
+            <Text>Preferences </Text>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
       <Text>HomeScreen</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -111,9 +124,21 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   PreferenceComponentCntr: {
-    paddingTop: 40,
+    paddingTop: 70,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
+  },
+  buttonComponentCtnr: {
+    paddingTop: 60,
+  },
+  buttonComponent: {
+    backgroundColor: "red",
+    padding: 15,
+  },
+  buttonTextStyle: {
+    color: "white",
+    fontWeight: "700",
+    fontSize: 20,
   },
 });
