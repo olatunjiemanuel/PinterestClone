@@ -34,7 +34,9 @@ const SearchScreen = () => {
             onChangeText={(value) => {
               setSearchText(value);
             }}
-            onSubmitEditing={() => {}}
+            onSubmitEditing={() => {
+              handleSubmit();
+            }}
             value={searchText}
             ref={inputRef}
             width={searching ? 250 : 300}
