@@ -3,7 +3,6 @@ import React from "react";
 
 // SVG Imports
 import { Feather } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 
 const index = (props) => {
   const { placeholder, onChangeText, value } = props;
@@ -29,6 +28,7 @@ export default index;
 const styles = StyleSheet.create({
   textInputContainer: {
     borderWidth: 1,
+    borderColor: "grey",
     padding: 10,
     flexDirection: "row",
     borderRadius: 20,

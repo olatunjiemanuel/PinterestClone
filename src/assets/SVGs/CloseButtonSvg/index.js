@@ -2,11 +2,11 @@ import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
 const CloseButtonSvg = (props) => {
-  const {} = props;
+  const { width, height } = props;
   return (
     <Svg
-      width={20}
-      height={20}
+      width={width}
+      height={height}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

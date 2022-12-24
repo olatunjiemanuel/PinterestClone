@@ -8,7 +8,7 @@ const CloseButtonComponent = (props) => {
   const { onPress } = props;
   return (
     <TouchableOpacity onPress={onPress} style={styles.mainCntr}>
-      <CloseButtonSvg />
+      <CloseButtonSvg width={20} height={20} />
     </TouchableOpacity>
   );
 };
