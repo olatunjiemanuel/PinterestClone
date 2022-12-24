@@ -1,12 +1,20 @@
 import { StyleSheet, Text, View, TextInput } from "react-native";
-import React from "react";
+import React, { forwardRef } from "react";
 
 // SVG Imports
 import { Feather } from "@expo/vector-icons";
 
-const index = (props) => {
-  const { placeholder, onChangeText, value, onFocus, onBlur, onSubmitEditing } =
-    props;
+const index = forwardRef((props, ref) => {
+  const {
+    placeholder,
+    onChangeText,
+    value,
+    onFocus,
+    onBlur,
+    onSubmitEditing,
+    width,
+  } = props;
+
   return (
     <View style={styles.textInputContainer}>
       <View style={{ marginRight: 5 }}>
@@ -17,16 +25,18 @@ const index = (props) => {
           placeholder={placeholder}
           onChangeText={onChangeText}
           value={value}
-          style={styles.textInput}
+          style={{ width: width }}
           onFocus={onFocus}
           onBlur={onBlur}
           onSubmitEditing={onSubmitEditing}
           clearTextOnFocus
+          clearButtonMode="while-editing"
+          ref={ref}
         />
       </View>
     </View>
   );
-};
+});
 
 export default index;
 
@@ -42,8 +52,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignContent: "space-around",
   },
-  textInput: {
-    // borderWidth: 1,
-    width: 250,
-  },
+  //   },
+  //   textInput: {
+  //     // width: "250",
+  //   },
 });
