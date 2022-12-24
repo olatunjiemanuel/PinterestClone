@@ -5,7 +5,8 @@ import React from "react";
 import { Feather } from "@expo/vector-icons";
 
 const index = (props) => {
-  const { placeholder, onChangeText, value } = props;
+  const { placeholder, onChangeText, value, onFocus, onBlur, onSubmitEditing } =
+    props;
   return (
     <View style={styles.textInputContainer}>
       <View style={{ marginRight: 5 }}>
@@ -17,6 +18,10 @@ const index = (props) => {
           onChangeText={onChangeText}
           value={value}
           style={styles.textInput}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onSubmitEditing={onSubmitEditing}
+          clearTextOnFocus
         />
       </View>
     </View>
