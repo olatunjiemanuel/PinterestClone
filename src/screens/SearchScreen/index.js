@@ -66,6 +66,7 @@ const SearchScreen = () => {
                 onPress={() => {
                   setSearchText(item);
                   handleSubmit();
+                  inputRef.current.blur();
                 }}
               />
             ))}
