@@ -5,6 +5,7 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import React, { useState, useRef } from "react";
 
@@ -73,11 +74,47 @@ const SearchScreen = () => {
           </ScrollView>
         </View>
       ) : (
-        <View style={styles.recommendationCntnr}>
-          <Text style={[styles.recentSearchTxt, { fontSize: 35 }]}>
-            Recommendations
-          </Text>
-        </View>
+        <ScrollView style={styles.recommendationCntnr}>
+          <View>
+            <Text style={[styles.recentSearchTxt, { fontSize: 35 }]}>
+              Recommendations
+            </Text>
+          </View>
+          <View style={styles.imaageCntnr}>
+            <Image
+              style={{ width: 330, height: 150 }}
+              source={require("../../Images/Recommendations/technology.jpg")}
+            />
+            <View
+              style={{
+                backgroundColor: "green",
+                width: 330,
+                heigth: 150,
+                position: "absolute",
+                flex: 1,
+              }}
+            >
+              <Text>Tunji</Text>
+            </View>
+          </View>
+          {/* <View>
+            <Image
+              style={{ width: 330, height: 150 }}
+              source={require("../../Images/Recommendations/Design.jpg")}
+            />
+          </View>
+          <View>
+            <Image
+              style={{ width: 330, height: 150 }}
+              source={require("../../Images/Recommendations/Art.jpg")}
+            />
+          </View> */}
+          <View>
+            <Text style={[styles.recentSearchTxt, { fontSize: 35 }]}>
+              Popular on Pinterest
+            </Text>
+          </View>
+        </ScrollView>
       )}
     </SafeAreaView>
   );
@@ -106,4 +143,7 @@ const styles = StyleSheet.create({
   recommendationCntnr: {
     marginTop: 40,
   },
+  // imaageCntnr: {
+  //   backgroundColor: "red",
+  // },
 });
