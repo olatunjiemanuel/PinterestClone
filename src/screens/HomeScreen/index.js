@@ -6,6 +6,7 @@ import {
   ScrollView,
   Modal,
   Image,
+  FlatList,
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
@@ -16,11 +17,12 @@ import PreferenceComponent from "../../assets/Components/PreferenceComponent";
 import PreferenceData from "../../assets/API Calls/RandomImageAPI";
 import CloseButtonComponent from "../../assets/Components/CloseButtonComponent";
 import ButtonComponent from "../../assets/Components/ButtonComponent";
+import HomeFeedComponent from "../../assets/Components/HomeFeedComponent";
 
 const HomeScreen = () => {
   //const [preferenceModal, setPreferenceModal] = useState(true);
   const [isShow, setShow] = useState(true);
-  //console.log(PreferenceData[0].url);
+  //console.log(PreferenceData[0]);
   return (
     <SafeAreaView style={styles.homeContainer}>
       <Modal visible={isShow} animationType={"slide"} transparent={true}>
@@ -73,17 +75,40 @@ const HomeScreen = () => {
       <ScrollView
         horizontal={true}
         style={{ backgroundColor: "red", padding: 20 }}
+        contentContainerStyle={{
+          alignItems: "center",
+          //flex: 1,
+          // alignItems: "center",
+          // justifyContent: "center",
+          height: 50,
+        }}
       >
         <TouchableOpacity onPress={() => setShow(true)}>
-          <View>
+          <View style={{ backgroundColor: "blue", height: 50 }}>
             <Text>For you</Text>
           </View>
-          <View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setShow(true)}>
+          <View style={{ backgroundColor: "green", height: 50 }}>
             <Text>Preferences </Text>
           </View>
         </TouchableOpacity>
       </ScrollView>
-      <Text>HomeScreen</Text>
+      <View style={styles.homeScreenCntnr}>
+        <Text>HomeScreen</Text>
+        <View style={styles.homeFeedCntnr}>
+          <FlatList
+            data={PreferenceData}
+            renderItem={({ item }) => (
+              <HomeFeedComponent
+                author={item.author}
+                ImgSrc={{ uri: item.url }}
+              />
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
@@ -140,5 +165,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "700",
     fontSize: 20,
+  },
+  homeScreenCntnr: {
+    paddingHorizontal: 10,
   },
 });
